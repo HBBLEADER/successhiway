@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Success Hiway — The Art of Recruiting by a 50-Year Network Marketing Veteran</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:   #0F2050;
+    --teal:   #0B6E56;
+    --gold:   #B8860B;
+    --gold-l: #D4A017;
+    --cream:  #FAF7F0;
+    --warm:   #F5EFE0;
+    --gray:   #5A5A5A;
+    --lgray:  #9A9A9A;
+    --white:  #FFFFFF;
+    --red:    #8B1A1A;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: #1A1A1A;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,.3);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-l);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold-l); }
+
+  /* ── PAGE SYSTEM ── */
+  .page { display: none; animation: fadeIn .4s ease; }
+  .page.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+  /* ── SHARED ── */
+  .section { padding: 80px 5%; max-width: 1100px; margin: 0 auto; }
+  .section-sm { padding: 60px 5%; max-width: 900px; margin: 0 auto; }
+
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+  .gold-rule {
+    width: 60px; height: 3px;
+    background: var(--gold);
+    margin: 16px 0 24px;
+  }
+  .gold-rule.center { margin: 16px auto 24px; }
+
+  .btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--white);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn:hover { background: var(--gold-l); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+  }
+  .btn-outline:hover { background: var(--gold); color: var(--white); }
+  .btn-navy {
+    background: var(--navy);
+  }
+  .btn-navy:hover { background: #1a3570; }
+
+  .tag {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  /* ── HOME PAGE ── */
+  .hero {
+    background: var(--navy);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 5%;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 70% 50%, rgba(11,110,86,.25) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(184,134,11,.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-text .tag { color: var(--gold-l); font-size: .8rem; }
+  .hero-text h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .hero-text h1 em { color: var(--gold-l); font-style: normal; }
+  .hero-text p {
+    color: rgba(255,255,255,.75);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    line-height: 1.75;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .hero-book {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 40px 32px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    text-align: center;
+    position: relative;
+  }
+  .hero-book::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--navy), var(--teal), var(--gold));
+  }
+  .book-cover {
+    background: var(--navy);
+    color: var(--white);
+    padding: 32px 24px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .book-cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+  .book-cover .series {
+    font-size: .7rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--gold-l);
+    margin-bottom: 12px;
+  }
+  .book-cover h2 {
+    font-size: 1rem;
+    color: rgba(255,255,255,.7);
+    font-weight: 400;
+    margin-bottom: 6px;
+    font-family: 'Source Sans 3', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+  .book-cover h3 {
+    font-size: 1.9rem;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .book-cover .author {
+    font-size: .85rem;
+    color: rgba(255,255,255,.6);
+    font-style: italic;
+  }
+  .book-price {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .book-price span { font-size: 1rem; color: var(--lgray); text-decoration: line-through; margin-left: 8px; }
+  .book-note { font-size: .8rem; color: var(--lgray); margin-bottom: 20px; }
+
+  /* What's Inside strip */
+  .inside-strip {
+    background: var(--warm);
+    border-top: 1px solid #E0D8C8;
+    border-bottom: 1px solid #E0D8C8;
+    padding: 60px 5%;
+  }
+  .inside-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .inside-item { display: flex; gap: 14px; align-items: flex-start; }
+  .inside-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+    min-width: 36px;
+  }
+  .inside-text h4 { font-size: 1rem; color: var(--navy); margin-bottom: 4px; }
+  .inside-text p { font-size: .9rem; color: var(--gray); line-height: 1.5; }
+
+  /* Testimonial */
+  .testimonial-strip {
+    background: var(--navy);
+    padding: 70px 5%;
+    text-align: center;
+  }
+  .testimonial-strip blockquote {
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    color: var(--white);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .testimonial-strip cite {
+    font-size: .9rem;
+    color: var(--gold-l);
+    font-style: normal;
+    letter-spacing: .05em;
+  }
+
+  /* ── ABOUT PAGE ── */
+  .about-hero {
+    background: var(--navy);
+    padding: 80px 5% 60px;
+    text-align: center;
+  }
+  .about-hero .tag { color: var(--gold-l); }
+  .about-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .about-hero p {
+    color: rgba(255,255,255,.7);
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+
+  .about-body { max-width: 860px; margin: 0 auto; padding: 70px 5%; }
+  .about-body p { margin-bottom: 20px; color: #2A2A2A; font-size: 1.05rem; }
+  .about-body h2 { font-size: 1.8rem; color: var(--navy); margin: 40px 0 16px; }
+
+  .credential-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 32px 0;
+  }
+  .credential {
+    background: var(--warm);
+    border-left: 4px solid var(--gold);
+    padding: 20px 24px;
+  }
+  .credential h4 { font-size: .85rem; color: var(--gold); font-family: 'Source Sans 3', sans-serif; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
+  .credential p { font-size: .95rem; color: var(--navy); margin: 0; font-weight: 500; }
+
+  .pullquote {
+    background: var(--navy);
+    color: var(--white);
+    padding: 32px 40px;
+    margin: 40px 0;
+    position: relative;
+  }
+  .pullquote::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px; left: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--white);
+    margin: 0;
+    padding-top: 20px;
+  }
+
+  /* ── EBOOK PAGE ── */
+  .ebook-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3570 100%);
+    padding: 80px 5%;
+  }
+  .ebook-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .ebook-cover-large {
+    background: var(--white);
+    padding: 8px;
+    box-shadow: 0 24px 80px rgba(0,0,0,.5);
+    transform: rotate(-1deg);
+  }
+  .ebook-cover-inner {
+    background: var(--navy);
+    padding: 40px 32px 48px;
+    position: relative;
+  }
+  .ebook-cover-inner::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, var(--gold), var(--teal));
+  }
+  .ebook-cover-inner .series-tag {
+    font-size: .7rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold-l);
+    margin-bottom: 20px;
+  }
+  .ebook-cover-inner h2 {
+    font-size: .85rem;
+    color: rgba(255,255,255,.6);
+    font-family: 'Source Sans 3', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .ebook-cover-inner h1 {
+    font-size: 2.6rem;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .ebook-cover-inner .divider {
+    width: 40px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 20px;
+  }
+  .ebook-cover-inner .subtitle {
+    font-size: .95rem;
+    color: rgba(255,255,255,.65);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .ebook-cover-inner .author-tag {
+    font-size: .8rem;
+    color: var(--gold-l);
+    letter-spacing: .06em;
+    font-style: italic;
+  }
+  .ebook-cover-inner .chapters {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+  }
+  .ebook-cover-inner .chapters span {
+    font-size: .78rem;
+    color: rgba(255,255,255,.5);
+  }
+  .ebook-cover-inner .chapters span::before {
+    content: '→ ';
+    color: var(--gold);
+  }
+
+  .ebook-info { color: var(--white); }
+  .ebook-info .tag { color: var(--gold-l); }
+  .ebook-info h2 { font-size: 1.6rem; color: var(--white); margin-bottom: 12px; line-height: 1.25; }
+  .ebook-info .lead { font-size: 1rem; color: rgba(255,255,255,.8); margin-bottom: 28px; line-height: 1.65; }
+
+  .price-box {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 28px 32px;
+    margin-bottom: 28px;
+  }
+  .price-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; }
+  .price-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--gold-l);
+    font-weight: 700;
+  }
+  .price-was {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.4);
+    text-decoration: line-through;
+  }
+  .price-note { font-size: .9rem; color: rgba(255,255,255,.6); margin-bottom: 20px; }
+  .price-includes { font-size: .85rem; color: rgba(255,255,255,.7); }
+  .price-includes span { display: block; padding: 3px 0; }
+  .price-includes span::before { content: '✓ '; color: var(--teal); font-weight: 700; }
+
+  .chapter-list {
+    max-width: 900px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .chapter-item {
+    background: var(--white);
+    border: 1px solid #E8E0D0;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .ch-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 700;
+    min-width: 32px;
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .ch-text h4 { font-size: 1rem; color: var(--navy); margin-bottom: 4px; }
+  .ch-text p { font-size: .85rem; color: var(--gray); line-height: 1.5; }
+
+  /* ── OPPORTUNITY PAGE ── */
+  .opp-hero {
+    background: var(--teal);
+    padding: 80px 5%;
+    text-align: center;
+  }
+  .opp-hero .tag { color: rgba(255,255,255,.7); }
+  .opp-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .opp-hero p { color: rgba(255,255,255,.8); max-width: 620px; margin: 0 auto; font-size: 1.1rem; }
+
+  .opp-body { max-width: 860px; margin: 0 auto; padding: 70px 5%; }
+  .opp-body p { margin-bottom: 20px; color: #2A2A2A; font-size: 1.05rem; }
+  .opp-body h2 { font-size: 1.8rem; color: var(--navy); margin: 40px 0 16px; }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 32px 0;
+  }
+  .pillar {
+    background: var(--white);
+    border: 1px solid #E0D8C8;
+    padding: 28px 24px;
+    border-top: 4px solid var(--teal);
+  }
+  .pillar h4 {
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .pillar p { font-size: .9rem; color: var(--gray); line-height: 1.6; margin: 0; }
+
+  .contact-box {
+    background: var(--navy);
+    padding: 48px 40px;
+    text-align: center;
+    margin-top: 48px;
+  }
+  .contact-box h3 {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .contact-box p {
+    color: rgba(255,255,255,.75);
+    max-width: 500px;
+    margin: 0 auto 28px;
+    font-size: 1rem;
+  }
+
+  .contact-form { max-width: 480px; margin: 0 auto; }
+  .form-group { margin-bottom: 16px; text-align: left; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .form-group label {
+    display: block;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 6px;
+  }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    color: var(--white);
+    padding: 12px 16px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: var(--gold-l);
+  }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .form-group input::placeholder, .form-group textarea::placeholder {
+    color: rgba(255,255,255,.3);
+  }
+  .form-note {
+    font-size: .8rem;
+    color: rgba(255,255,255,.5);
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0A1530;
+    color: rgba(255,255,255,.5);
+    text-align: center;
+    padding: 32px 5%;
+    font-size: .85rem;
+  }
+  footer a { color: var(--gold-l); text-decoration: none; }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-l);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  /* ── UTILS ── */
+  .text-center { text-align: center; }
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-32 { margin-top: 32px; }
+  .mb-0 { margin-bottom: 0; }
+
+  /* ── PRICING TIERS ── */
+  .price-tier {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+  }
+  .price-tier-discount { border-color: var(--gold); }
+  .price-tier-referral { border-color: #7fffd4; }
+  .price-tier-header { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px; }
+  .price-tier-label { font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.6); }
+  .price-main-lg {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: var(--gold-l);
+    font-weight: 700;
+  }
+  .field-error { display:block; font-size:.78rem; color:#ff7f7f; margin-top:4px; min-height:16px; }
+
+  /* ── OPPORTUNITY STRIP ── */
+  .opp-strip {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3570 100%);
+    border-top: 4px solid var(--gold);
+    padding: 60px 5%;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .opp-strip h3 { font-size:1.8rem; color:var(--white); margin-bottom:14px; }
+  .opp-strip p { color:rgba(255,255,255,.75); max-width:620px; margin:0 auto 28px; font-size:1.05rem; line-height:1.75; }
+
+  /* select styling */
+  select option { background: #1a2a4a !important; color: #ffffff !important; }
+  select { appearance: auto; -webkit-appearance: auto; color: #ffffff !important; }
+
+  /* shared select style used inline on form selects */
+  .form-select {
+    width: 100%;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+    padding: 12px 16px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .form-select:focus { border-color: var(--gold-l); }
+
+  @media (max-width: 768px) {
+    .hero-inner, .ebook-hero-inner { grid-template-columns: 1fr; }
+    .hero-book { display: none; }
+    .chapter-list { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .price-tier { padding: 20px 18px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home')">Success Hiway</a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a href="#" onclick="showPage('ebook')" id="nav-ebook">The eBook</a></li>
+    <li><a href="#" onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a href="#" onclick="showPage('opportunity')" id="nav-opportunity">Work With Me</a></li>
+  </ul>
+</nav>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- HOME PAGE -->
+<!-- ════════════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="tag">Success Hiway &nbsp;·&nbsp; Built on 50 Years of Experience</div>
+        <h1>The Skills That Build a <em>Network Marketing Business</em> — Taught Properly</h1>
+        <p>Most distributors are handed a product and a dream and told to go talk to people. No one shows them how. This is where that changes.</p>
+        <div class="hero-btns">
+          <button class="btn" onclick="showPage('ebook')">Get the eBook</button>
+          <button class="btn btn-outline" onclick="showPage('about')">About the Author</button>
+        </div>
+      </div>
+
+      <div class="hero-book">
+        <div class="book-cover">
+          <div class="series">The Networker's Edge Series</div>
+          <h2>The Art of</h2>
+          <h3>Recruiting</h3>
+          <p class="author">A 50-Year Network Marketing Veteran</p>
+        </div>
+        <div style="padding: 20px 0 8px">
+          <div class="book-price">$37 <span>$47</span></div>
+          <div class="book-note">Instant digital download · 10 chapters · 180+ pages</div>
+          <button class="btn" style="width:100%" onclick="showPage('ebook')">Learn More &amp; Purchase</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Inside -->
+  <section class="inside-strip">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="tag text-center">What You Will Learn</div>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);color:var(--navy);text-align:center">A Complete Field Guide — For Every Level</h2>
+      <div class="gold-rule center"></div>
+      <p style="text-align:center;max-width:640px;margin:0 auto;color:var(--gray)">Written for the distributor who is just getting started, the builder who has lost momentum, and the veteran who knows there is always more to learn.</p>
+
+      <div class="inside-grid">
+        <div class="inside-item">
+          <div class="inside-num">01</div>
+          <div class="inside-text">
+            <h4>The Recruiter's Mindset</h4>
+            <p>The beliefs that separate top performers from everyone else — before a single word is spoken.</p>
+          </div>
+        </div>
+        <div class="inside-item">
+          <div class="inside-num">02</div>
+          <div class="inside-text">
+            <h4>Finding Your Prospects</h4>
+            <p>Five proven prospect pools and lead generation systems that mean you never run out of people to talk to.</p>
+          </div>
+        </div>
+        <div class="inside-item">
+          <div class="inside-num">03</div>
+          <div class="inside-text">
+            <h4>Starting the Conversation</h4>
+            <p>Word-for-word scripts for every setting — warm contacts, cold contacts, health stores, and social media.</p>
+          </div>
+        </div>
+        <div class="inside-item">
+          <div class="inside-num">04</div>
+          <div class="inside-text">
+            <h4>Handling Objections</h4>
+            <p>The six most common objections — with exact responses that earn the next conversation, not force a decision.</p>
+          </div>
+        </div>
+        <div class="inside-item">
+          <div class="inside-num">05</div>
+          <div class="inside-text">
+            <h4>The Follow-Up System</h4>
+            <p>A proven 7-step sequence that converts without pressure — including the graceful exit that generates callbacks.</p>
+          </div>
+        </div>
+        <div class="inside-item">
+          <div class="inside-num">06</div>
+          <div class="inside-text">
+            <h4>Social Media Recruiting</h4>
+            <p>How to attract prospects to you — with content that builds authority and trust without a single pitch.</p>
+          </div>
+        </div>
+        <div class="inside-item">
+          <div class="inside-num">07</div>
+          <div class="inside-text">
+            <h4>The Art of the Close</h4>
+            <p>Closing questions that work, the discipline of silence, and the one rule that changes everything.</p>
+          </div>
+        </div>
+        <div class="inside-item">
+          <div class="inside-num">08</div>
+          <div class="inside-text">
+            <h4>Special Audiences</h4>
+            <p>Specific scripts for health seekers, professionals, experienced network marketers, and skeptics.</p>
+          </div>
+        </div>
+        <div class="inside-item">
+          <div class="inside-num">09</div>
+          <div class="inside-text">
+            <h4>Onboarding &amp; Duplication</h4>
+            <p>The 30-day system that turns a new signup into a productive, loyal builder — and how to teach it.</p>
+          </div>
+        </div>
+        <div class="inside-item">
+          <div class="inside-num">10</div>
+          <div class="inside-text">
+            <h4>The Real Goal</h4>
+            <p>The goal discovery technique that finds the one reason someone will never quit — and how to use it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote strip -->
+  <div class="testimonial-strip">
+    <blockquote>"The art of recruiting is exactly that — an art. It can be learned. It can be refined. And when it is mastered, it changes not just your business but the lives of every person you bring into it."</blockquote>
+    <cite>— A 50-Year Network Marketing Veteran, Author of The Art of Recruiting</cite>
+  </div>
+
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="tag">Ready to Build?</div>
+    <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);color:var(--navy)">Start With the Skills. Build With Confidence.</h2>
+    <div class="gold-rule center"></div>
+    <p style="max-width:580px;margin:0 auto 32px;color:var(--gray)">Everything you need to find prospects, start conversations, handle objections, close with dignity, and build a team that lasts — in one complete field guide.</p>
+    <button class="btn btn-navy" onclick="showPage('ebook')">Get The Art of Recruiting — View Pricing</button>
+    <p style="margin-top:12px;font-size:.85rem;color:var(--lgray)">Instant download · Works for any network marketing company</p>
+  </section>
+
+</div><!-- /home -->
+
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- eBOOK PAGE -->
+<!-- ════════════════════════════════════════════════════ -->
+<div id="page-ebook" class="page">
+
+  <section class="ebook-hero">
+    <div class="ebook-hero-inner">
+
+      <!-- Book Cover Photo -->
+      <div class="ebook-cover-large" style="background:none;padding:0;transform:rotate(-1deg);box-shadow:0 24px 80px rgba(0,0,0,.6);">
+        <img src="cover.png" alt="The Art of Recruiting — Book Cover" style="width:100%;display:block;border:6px solid var(--gold);">
+      </div>
+
+      <!-- Info & Purchase -->
+      <div class="ebook-info">
+        <div class="tag">Now Available</div>
+        <h2>The Skills Most Distributors Are Never Taught</h2>
+        <div class="gold-rule"></div>
+        <p class="lead">Ten chapters. Every script, system, and strategy you need — built on 50 years of real conversations with real people. Works for any company. Keeps working for life.</p>
+
+        <!-- PRICING TIERS -->
+        <div id="pricing-section">
+
+          <!-- $37 RETAIL — always shown -->
+          <div class="price-tier" id="tier-retail">
+            <div class="price-tier-header">
+              <div class="price-tier-label">Regular Price</div>
+              <div class="price-main-lg">$37</div>
+            </div>
+            <div class="price-includes">
+              <span>The Art of Recruiting — full eBook (PDF)</span>
+              <span>Word-for-word scripts for every recruiting situation</span>
+              <span>Complete 7-step follow-up system</span>
+              <span>Closing question library by prospect type</span>
+              <span>30-day onboarding system</span>
+              <span>Instant download — start reading in minutes</span>
+            </div>
+            <button class="btn" style="width:100%;font-size:1.05rem;padding:16px;margin-top:16px" onclick="window.open('https://ericksonic2.gumroad.com/l/e','_blank')">Buy Now — $37 →</button>
+          </div>
+
+          <!-- DIVIDER -->
+          <div style="text-align:center;padding:16px 0;color:rgba(255,255,255,.4);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;">— or —</div>
+
+          <!-- $27 WITH SAVE10 — opt-in to receive code -->
+          <div class="price-tier price-tier-discount" id="tier-discount">
+            <div class="price-tier-header">
+              <div class="price-tier-label" style="color:var(--gold-l)">✦ Get $10 Off — Pay Just $27</div>
+              <div style="display:flex;align-items:baseline;gap:12px;">
+                <div class="price-main-lg" style="color:var(--gold-l)">$27</div>
+                <div style="font-size:1rem;color:rgba(255,255,255,.35);text-decoration:line-through;">$37</div>
+              </div>
+            </div>
+
+            <p style="font-size:.95rem;color:rgba(255,255,255,.8);margin-bottom:6px;line-height:1.65;">Simply share your contact information below and we will send you a <strong style="color:var(--gold-l);">$10 discount code</strong> to use at checkout.</p>
+            <p style="font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:20px;font-style:italic;">No obligation. No spam. Just a thank-you for connecting with us.</p>
+
+            <!-- OPT-IN FORM -->
+            <div id="form-discount">
+
+              <!-- First Name / Last Name row -->
+              <div class="form-row">
+                <div class="form-group" style="margin-bottom:0">
+                  <label>First Name</label>
+                  <input type="text" id="f17-firstname" placeholder="First name">
+                  <span class="field-error" id="err-f17-firstname"></span>
+                </div>
+                <div class="form-group" style="margin-bottom:0">
+                  <label>Last Name</label>
+                  <input type="text" id="f17-lastname" placeholder="Last name">
+                  <span class="field-error" id="err-f17-lastname"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="f17-email" placeholder="your@email.com">
+                <span class="field-error" id="err-f17-email"></span>
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="f17-phone" placeholder="e.g. 555-867-5309">
+                <span class="field-error" id="err-f17-phone"></span>
+              </div>
+
+              <div class="form-group">
+                <label>Phone Type</label>
+                <select id="f17-phonetype" class="form-select">
+                  <option value="">— Select Phone Type —</option>
+                  <option value="Mobile">Mobile</option>
+                  <option value="Home">Home</option>
+                  <option value="Work">Work</option>
+                </select>
+                <span class="field-error" id="err-f17-phonetype"></span>
+              </div>
+
+              <div class="form-group">
+                <label>Your State</label>
+                <select id="f17-state" class="form-select">
+                  <option value="">— Select State —</option>
+                  <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option><option>Outside USA</option>
+                </select>
+                <span class="field-error" id="err-f17-state"></span>
+              </div>
+
+              <div class="form-group">
+                <label>Your Time Zone</label>
+                <select id="f17-tz" class="form-select">
+                  <option value="">— Select Time Zone —</option>
+                  <option value="ET">Eastern Time (ET)</option>
+                  <option value="CT">Central Time (CT)</option>
+                  <option value="MT">Mountain Time (MT)</option>
+                  <option value="PT">Pacific Time (PT)</option>
+                  <option value="AKT">Alaska Time (AKT)</option>
+                  <option value="HT">Hawaii Time (HT)</option>
+                  <option value="Other">Outside USA</option>
+                </select>
+                <span class="field-error" id="err-f17-tz"></span>
+              </div>
+
+              <div class="form-group">
+                <label>Country</label>
+                <select id="f17-country" class="form-select">
+                  <option value="">— Select Country —</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="AU">Australia</option>
+                  <option value="NZ">New Zealand</option>
+                  <option value="IE">Ireland</option>
+                  <option value="MX">Mexico</option>
+                  <option value="PH">Philippines</option>
+                  <option value="IN">India</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="KE">Kenya</option>
+                  <option value="GH">Ghana</option>
+                  <option value="SG">Singapore</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="field-error" id="err-f17-country"></span>
+              </div>
+
+              <button class="btn" style="width:100%;background:var(--gold);margin-top:8px;font-size:1rem;padding:15px;" onclick="validate17()">Send Me My Discount Code →</button>
+
+              <!-- SUCCESS: shown after valid opt-in -->
+              <div id="code-17-result" style="display:none;margin-top:20px;background:rgba(255,255,255,.07);border:2px solid var(--gold-l);padding:24px;text-align:center;">
+                <p style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:6px;letter-spacing:.1em;text-transform:uppercase;">Your Discount Code</p>
+                <div style="font-size:2.2rem;font-weight:700;color:var(--gold-l);letter-spacing:.2em;font-family:'Playfair Display',serif;margin-bottom:12px;">SAVE10</div>
+                <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.6;">Click below to go to checkout. When you get there, enter <strong style="color:var(--gold-l);">SAVE10</strong> in the discount box to pay just <strong style="color:var(--white);">$27</strong>.</p>
+                <button class="btn" style="width:100%;font-size:1.05rem;padding:16px;" onclick="window.open('https://ericksonic2.gumroad.com/l/e','_blank')">Go to Checkout — Use Code SAVE10 →</button>
+                <p style="font-size:.78rem;color:rgba(255,255,255,.4);margin-top:10px;font-style:italic;">Thank you! We look forward to connecting with you.</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /pricing-section -->
+
+        <p style="margin-top:12px;font-size:.85rem;color:rgba(255,255,255,.5);text-align:center">Secure checkout · Instant digital delivery · Works on any device</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Chapter breakdown -->
+  <section class="section">
+    <div class="tag text-center">Inside the eBook</div>
+    <h2 style="font-size:clamp(1.6rem,2.5vw,2.2rem);color:var(--navy);text-align:center">Ten Chapters. Every Skill You Need.</h2>
+    <div class="gold-rule center"></div>
+
+    <div class="chapter-list">
+      <div class="chapter-item"><div class="ch-num">1</div><div class="ch-text"><h4>The Mindset of a Top Recruiter</h4><p>The 5 mindset shifts that separate the top 10% from everyone else — before a single word is spoken.</p></div></div>
+      <div class="chapter-item"><div class="ch-num">2</div><div class="ch-text"><h4>Finding Your Prospects</h4><p>The 5 prospect pools, lead generation systems, and how to never genuinely run out of people to talk to.</p></div></div>
+      <div class="chapter-item"><div class="ch-num">3</div><div class="ch-text"><h4>Starting the Conversation</h4><p>4 opening principles and word-for-word scripts for warm contacts, cold contacts, and social media.</p></div></div>
+      <div class="chapter-item"><div class="ch-num">4</div><div class="ch-text"><h4>Handling Objections</h4><p>The 6 most common objections with exact multi-step responses — plus the money objection special case.</p></div></div>
+      <div class="chapter-item"><div class="ch-num">5</div><div class="ch-text"><h4>The Follow-Up System</h4><p>A 7-step sequence with timing, scripts, and the graceful exit that generates more callbacks than any other step.</p></div></div>
+      <div class="chapter-item"><div class="ch-num">6</div><div class="ch-text"><h4>Social Media Recruiting</h4><p>5 content types, 3 ready-to-use posts, and the comment response system that moves conversations to DMs.</p></div></div>
+      <div class="chapter-item"><div class="ch-num">7</div><div class="ch-text"><h4>The Art of the Close</h4><p>The 5 non-negotiable closing rules and a complete library of closing questions by situation and prospect type.</p></div></div>
+      <div class="chapter-item"><div class="ch-num">8</div><div class="ch-text"><h4>Recruiting Special Audiences</h4><p>Specific scripts for health seekers, professionals, experienced network marketers, and hard-core skeptics.</p></div></div>
+      <div class="chapter-item"><div class="ch-num">9</div><div class="ch-text"><h4>Onboarding and Duplication</h4><p>The welcome call, the 30-day system, and the 3 weekly accountability questions that keep teams active.</p></div></div>
+      <div class="chapter-item"><div class="ch-num">10</div><div class="ch-text"><h4>The Real Goal</h4><p>The restate-and-dig technique that finds the one goal a person will never quit for — and how to use it weekly.</p></div></div>
+    </div>
+  </section>
+
+  <!-- Chapter 1 Preview -->
+  <div style="background:var(--navy);padding:70px 5%;border-top:4px solid var(--gold)">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="tag" style="color:var(--gold-l)">Free Preview — Foreword &amp; Chapter 1</div>
+      <h2 style="font-size:clamp(1.6rem,2.5vw,2.2rem);color:var(--white);margin-bottom:8px">The Art of Recruiting — Free Sample Edition</h2>
+      <div class="gold-rule"></div>
+
+      <!-- FOREWORD -->
+      <h3 style="color:var(--gold-l);font-size:1.3rem;margin-bottom:16px;font-family:'Playfair Display',serif;">Foreword: Why I Wrote This Guide</h3>
+      <div style="background:rgba(255,255,255,.06);border-left:4px solid var(--gold);padding:28px 32px;margin-bottom:28px;">
+        <p style="color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.85;margin-bottom:18px;">Fifty years is a long time to be in any industry. Long enough to have seen extraordinary people build extraordinary businesses. Long enough to have watched talented people fail for entirely preventable reasons. Long enough to know the difference between what actually works and what only sounds like it should.</p>
+        <p style="color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.85;margin-bottom:18px;">I did not write this guide to sell you on any particular company or opportunity. I wrote it because the skills that build a successful network marketing business are universal — and they are almost never taught properly.</p>
+        <p style="color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.85;margin-bottom:18px;">Most distributors are handed a product and a dream and told to go talk to people. No one shows them how to start a conversation without feeling like a salesperson. No one teaches them how to handle the objections that come up in the first sixty seconds. No one explains what a closing question is, why it matters, or what to do with the silence after you ask one.</p>
+        <p style="color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.85;margin-bottom:18px;">This guide fills that gap. It is built on five decades of conversations — with prospects, with team members, with top earners, and with people who quit before they found their footing. Every technique in these pages has been tested in the real world. Not in a training room. Not on a stage. In actual conversations with actual people who had actual doubts.</p>
+        <p style="color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.85;margin-bottom:0;">One thing I ask of every reader: do not simply read this. Use it. The ideas in these pages only have value when they are applied in real conversations with real people. Practice the scripts. Rehearse the objection responses. Internalize the closing questions until they feel completely natural.</p>
+      </div>
+
+      <!-- PULL QUOTE -->
+      <div style="background:rgba(184,134,11,.15);border:1px solid var(--gold);padding:28px 36px;margin-bottom:32px;text-align:center;">
+        <p style="font-family:'Playfair Display',serif;font-size:1.2rem;font-style:italic;color:var(--white);line-height:1.7;margin:0;">"The art of recruiting is exactly that — an art. It can be learned. It can be refined. And when it is mastered, it changes not just your business but the lives of every person you bring into it."</p>
+        <p style="color:var(--gold-l);font-size:.85rem;margin-top:12px;letter-spacing:.05em;">— A 50-Year Network Marketing Veteran</p>
+      </div>
+
+      <!-- CHAPTER 1 -->
+      <h3 style="color:var(--gold-l);font-size:1.3rem;margin-bottom:8px;font-family:'Playfair Display',serif;">Chapter 1: The Mindset of a Top Recruiter</h3>
+      <p style="color:rgba(255,255,255,.55);font-size:.85rem;margin-bottom:20px;font-style:italic;">How the best in this industry think — before a single word is spoken</p>
+
+      <div style="background:rgba(255,255,255,.06);border-left:4px solid var(--gold);padding:28px 32px;margin-bottom:24px;">
+        <p style="color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.85;margin-bottom:18px;">The single most important factor in your recruiting results has nothing to do with your scripts, your follow-up system, or your closing questions. It is your mindset — the beliefs you carry into every conversation about who you are, what you are offering, and why it matters.</p>
+        <p style="color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.85;margin-bottom:18px;">Most new distributors approach recruiting from a place of need. They need the person to say yes. They need the sale. They need validation that they made the right decision joining this company. That need is felt by every prospect on the other side of the conversation — and it is the number one reason people say no.</p>
+        <p style="color:var(--gold-l);font-size:1rem;font-style:italic;line-height:1.7;margin:0;">"The best recruiters in this industry are not trying to convince anyone of anything. They are finding the right people and letting the right people find them."</p>
+      </div>
+
+      <!-- 5 MINDSET SHIFTS -->
+      <h4 style="color:var(--white);font-size:1.1rem;margin-bottom:20px;font-family:'Playfair Display',serif;">The 5 Mindset Shifts That Change Everything</h4>
+      <div style="display:grid;gap:16px;margin-bottom:28px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.05);padding:20px 24px;">
+          <div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;min-width:32px;line-height:1.1;">1</div>
+          <div><p style="color:var(--white);font-weight:600;margin-bottom:6px;">From Selling to Serving</p><p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.65;margin:0;">The moment you stop trying to get someone to join and start genuinely trying to understand whether this is right for them — everything changes. People can feel the difference instantly. A recruiter who serves is curious, patient, and honest. A recruiter who sells is desperate, pushy, and ultimately ineffective.</p></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.05);padding:20px 24px;">
+          <div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;min-width:32px;line-height:1.1;">2</div>
+          <div><p style="color:var(--white);font-weight:600;margin-bottom:6px;">From Outcome to Process</p><p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.65;margin:0;">You cannot control whether someone says yes. You can only control the quality of your conversation, the consistency of your follow-up, and the authenticity of your presentation. Top recruiters are not attached to any single outcome. They are committed to a repeatable process.</p></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.05);padding:20px 24px;">
+          <div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;min-width:32px;line-height:1.1;">3</div>
+          <div><p style="color:var(--white);font-weight:600;margin-bottom:6px;">From Scarcity to Abundance</p><p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.65;margin:0;">There is no shortage of people who could benefit from what you are offering. There is only a shortage of conversations. The distributor who believes there are not enough prospects will find evidence for that belief everywhere. The distributor who believes prospects are everywhere — finds them everywhere.</p></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.05);padding:20px 24px;">
+          <div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;min-width:32px;line-height:1.1;">4</div>
+          <div><p style="color:var(--white);font-weight:600;margin-bottom:6px;">From Rejection to Redirection</p><p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.65;margin:0;">Every no is a redirect to the right person. The distributor who internalizes rejection as personal failure will quit long before they find their stride. The distributor who understands that no simply means not this person, not this moment — moves forward without hesitation.</p></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.05);padding:20px 24px;">
+          <div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;min-width:32px;line-height:1.1;">5</div>
+          <div><p style="color:var(--white);font-weight:600;margin-bottom:6px;">From Amateur to Professional</p><p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.65;margin:0;">Professionals in any field invest in their skills. They study, practice, and refine. The network marketing professional who reads this guide, learns these scripts, and practices these conversations is not in the same category as someone who wings it. Professionalism is a choice — and it is available to anyone who makes it.</p></div>
+        </div>
+      </div>
+
+      <!-- 3 LAWS -->
+      <div style="background:rgba(255,255,255,.06);border-left:4px solid var(--teal);padding:28px 32px;margin-bottom:28px;">
+        <h4 style="color:var(--white);font-size:1.05rem;margin-bottom:16px;font-family:'Playfair Display',serif;">The 3 Laws of Recruiting Mindset</h4>
+        <div style="display:grid;gap:12px;">
+          <div style="display:flex;gap:12px;"><span style="color:var(--teal);font-weight:700;min-width:20px;">1.</span><p style="color:rgba(255,255,255,.8);font-size:.95rem;line-height:1.65;margin:0;">You cannot persuade someone to want what they do not want. You can only find the people who already want it.</p></div>
+          <div style="display:flex;gap:12px;"><span style="color:var(--teal);font-weight:700;min-width:20px;">2.</span><p style="color:rgba(255,255,255,.8);font-size:.95rem;line-height:1.65;margin:0;">Your belief in your product, your company, and your own ability is felt before you say a single word.</p></div>
+          <div style="display:flex;gap:12px;"><span style="color:var(--teal);font-weight:700;min-width:20px;">3.</span><p style="color:rgba(255,255,255,.8);font-size:.95rem;line-height:1.65;margin:0;">Every great recruiting conversation starts with genuine curiosity about the other person — not a plan to pitch them.</p></div>
+        </div>
+      </div>
+
+      <div style="background:rgba(184,134,11,.12);border:1px solid rgba(184,134,11,.4);padding:24px 32px;text-align:center;margin-bottom:28px;">
+        <p style="color:rgba(255,255,255,.7);font-size:.95rem;font-style:italic;margin:0;">Your free sample ends here. The complete guide continues through 14 chapters — every script, objection response, closing question, and follow-up system you need to build a thriving network marketing business.</p>
+      </div>
+
+      <div style="text-align:center;">
+        <button class="btn" style="font-size:1.05rem;padding:18px 48px" onclick="showPage('ebook');window.scrollTo({top:0,behavior:'smooth'})">Get the Full Guide at SuccessHiway.com →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Who it's for -->
+  <div style="background:var(--warm);border-top:1px solid #E0D8C8;border-bottom:1px solid #E0D8C8;padding:60px 5%">
+    <div style="max-width:900px;margin:0 auto;text-align:center">
+      <div class="tag">Who This Is Written For</div>
+      <h2 style="font-size:1.8rem;color:var(--navy)">Three Readers. One Complete Guide.</h2>
+      <div class="gold-rule center"></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:32px;text-align:left">
+        <div style="background:var(--white);padding:28px 24px;border-top:3px solid var(--navy)">
+          <h4 style="color:var(--navy);margin-bottom:10px">New Distributors</h4>
+          <p style="font-size:.95rem;color:var(--gray)">Learn these skills before forming bad habits. The foundation that most distributors never receive.</p>
+        </div>
+        <div style="background:var(--white);padding:28px 24px;border-top:3px solid var(--teal)">
+          <h4 style="color:var(--navy);margin-bottom:10px">Struggling Builders</h4>
+          <p style="font-size:.95rem;color:var(--gray)">The answer to what is not working is almost always in the fundamentals. This is the reset that works.</p>
+        </div>
+        <div style="background:var(--white);padding:28px 24px;border-top:3px solid var(--gold)">
+          <h4 style="color:var(--navy);margin-bottom:10px">Experienced Veterans</h4>
+          <p style="font-size:.95rem;color:var(--gray)">The best in this industry never stop learning. That is not a cliché. It is the reason they are the best.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <section class="section text-center">
+    <div class="tag">Ready to Start?</div>
+    <h2 style="font-size:clamp(1.8rem,3vw,2.2rem);color:var(--navy)">Get The Art of Recruiting Today</h2>
+    <div class="gold-rule center"></div>
+    <p style="max-width:560px;margin:0 auto 32px;color:var(--gray)">Instant download. Works for any network marketing company. Keeps working for your entire career.</p>
+    <button class="btn" style="font-size:1.1rem;padding:18px 48px" onclick="showPage('ebook');window.scrollTo({top:0,behavior:'smooth'})">See Pricing Options →</button>
+    <p style="margin-top:12px;font-size:.85rem;color:var(--lgray)">Questions? <a href="#" onclick="showPage('opportunity')" style="color:var(--gold)">Reach out here.</a></p>
+  </section>
+
+  <!-- Opportunity Strip -->
+  <div class="opp-strip">
+    <div class="tag" style="color:var(--gold-l)">One More Thing</div>
+    <h3>Your Success Journey Doesn't Stop Here</h3>
+    <div class="gold-rule center"></div>
+    <p>If you're serious about building income from home, I want to share an opportunity that has made a real difference for me. It may be exactly what you've been looking for.</p>
+    <a href="https://GreatLifeWorldWide.com/CarlErickson" target="_blank" rel="noopener" class="btn" style="font-size:1rem;padding:16px 40px;">See What I Found →</a>
+  </div>
+
+</div><!-- /ebook -->
+
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- ABOUT PAGE -->
+<!-- ════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+
+  <div class="about-hero">
+    <div class="tag">The Author</div>
+    <h1>50 Years. One Industry. Everything I Know.</h1>
+    <div class="gold-rule center" style="margin:16px auto 16px"></div>
+    <p>A 50-Year Network Marketing Veteran — and what that actually means.</p>
+  </div>
+
+  <div class="about-body">
+
+    <p>Fifty years is a long time to be in any industry. Long enough to have watched extraordinary people build extraordinary businesses. Long enough to watch talented people fail for entirely preventable reasons. Long enough to know the difference between what actually works and what only sounds like it should.</p>
+
+    <p>I started in this industry before the internet existed. Before cell phones. Before social media, before Zoom, before the concept of a landing page. I built teams through kitchen table meetings, hotel ballrooms, long-distance phone calls, and printed newsletters sent through the mail.</p>
+
+    <p>I have seen every compensation plan structure the industry has produced. Every recruiting approach. Every leadership style. Every kind of company — the ones that were built to last and the ones that were built to enrich the founders. I have worked with both and learned from all of them.</p>
+
+    <div class="pullquote">
+      <p>I did not write this guide to sell you on any particular company or opportunity. I wrote it because the skills that build a successful network marketing business are universal — and they are almost never taught properly.</p>
+    </div>
+
+    <h2>What I Have Learned</h2>
+
+    <p>The most common reason talented people fail in network marketing is not the company they chose, the products they carried, or the market they were in. It is the skills gap — the gap between being handed an opportunity and knowing what to actually do with it.</p>
+
+    <p>Most distributors are taught what to sell. Almost none are taught how to have a recruiting conversation with genuine confidence. How to handle the first objection without flinching. How to follow up seven times without becoming a nuisance. How to ask a closing question and then — critically — stay silent.</p>
+
+    <p>This guide is my attempt to close that gap. Not with theory, but with the actual words, sequences, and techniques that work in real conversations with real people who have real doubts.</p>
+
+    <div class="credential-grid">
+      <div class="credential">
+        <h4>Experience</h4>
+        <p>50+ Years as an Independent Network Marketing Distributor</p>
+      </div>
+      <div class="credential">
+        <h4>Perspective</h4>
+        <p>Multiple companies, thousands of conversations, every market condition</p>
+      </div>
+      <div class="credential">
+        <h4>Personal</h4>
+        <p>Triple bypass survivor, 2015 — a personal stake in health and longevity</p>
+      </div>
+      <div class="credential">
+        <h4>Mission</h4>
+        <p>To give every distributor the training most companies never provide</p>
+      </div>
+    </div>
+
+    <h2>Why I Stay Anonymous</h2>
+
+    <p>You will notice I have not used my name on this guide. That is intentional. I am not building a personal brand. I am sharing knowledge that belongs to the industry — skills that work regardless of which company you represent, which products you carry, or which market you are in.</p>
+
+    <p>The techniques in this guide have been tested in real conversations over five decades. They are not attributed to me. They are given to you. Use them, teach them, pass them along. That is the only attribution that matters in this business.</p>
+
+    <h2>What I Am Building Now</h2>
+
+    <p>After five decades, I am still building. Still recruiting. Still onboarding. Still sitting across from people — now virtually — and having the conversation that could change their financial future.</p>
+
+    <p>Success Hiway is the platform I am using to share what I have learned — through this guide, through training resources, and through the opportunity I am currently building that I believe is the most credible and distributor-focused I have encountered in fifty years.</p>
+
+    <p>If you want to know more about that opportunity — not as a pitch, but as a conversation between people who both know what to look for — I would love to talk.</p>
+
+    <div style="margin-top:40px;text-align:center">
+      <button class="btn btn-navy" onclick="showPage('opportunity')">Work With Me →</button>
+      <p style="margin-top:12px;font-size:.85rem;color:var(--lgray)">No pressure. Just a conversation.</p>
+    </div>
+
+  </div>
+</div><!-- /about -->
+
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- OPPORTUNITY PAGE -->
+<!-- ════════════════════════════════════════════════════ -->
+<div id="page-opportunity" class="page">
+
+  <div class="opp-hero">
+    <div class="tag">Work With Me</div>
+    <h1>If You Are Looking for Something Worth Building</h1>
+    <div class="gold-rule center" style="margin:16px auto 16px"></div>
+    <p>This is not a pitch. It is an open door — for the person who is ready to walk through it.</p>
+  </div>
+
+  <div class="opp-body">
+
+    <p>After fifty years in this industry, I have a very short list of things I will put my name behind. The opportunity I am currently building with is on that list — and I do not say that casually.</p>
+
+    <p>I am not going to fill this page with income claims, lifestyle photos, or countdown timers. That is not how I built my business over five decades and it is not how I intend to build it now.</p>
+
+    <p>What I will tell you is what I look for — and what I found.</p>
+
+    <div class="pullquote" style="background:var(--teal)">
+      <p>People do not join companies. They join people. Every conversation I have is not just about the opportunity — it is a presentation of who I am. After fifty years, that is the only credential that matters.</p>
+    </div>
+
+    <h2>What I Look for in Any Opportunity</h2>
+
+    <p>These are the four questions I ask before I put my name on anything. I have been asking them for fifty years. Most companies cannot answer all four. The one I work with can.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <h4>Who owns it?</h4>
+        <p>Privately held. An owner who has actually built what they are asking you to build. Not a board of directors optimizing for quarterly earnings.</p>
+      </div>
+      <div class="pillar">
+        <h4>Are the products credible?</h4>
+        <p>Science-based, clinically developed, used personally by medical professionals. Products that people reorder because they work — not because they have to.</p>
+      </div>
+      <div class="pillar">
+        <h4>Does the plan actually pay?</h4>
+        <p>A compensation structure that pays on actual products purchased at every level — not on volume thresholds that erode income the moment your team has an off month.</p>
+      </div>
+      <div class="pillar">
+        <h4>What happens when you need help?</h4>
+        <p>Real support — knowledgeable, friendly, reachable within minutes. Not a voicemail system. Not a ticket queue. Real people who know the products and care about your results.</p>
+      </div>
+    </div>
+
+    <h2>Who I Am Looking For</h2>
+
+    <p>I am not looking for everyone. I am looking for the right people. Specifically:</p>
+
+    <p>The person who takes their health seriously and wants products backed by real science and trusted by medical professionals — not marketing claims.</p>
+
+    <p>The person who wants to build a real income — not a get-rich-quick shortcut, but a residual income that grows as their team grows and pays on every reorder throughout their organization every month.</p>
+
+    <p>The experienced network marketer who has been frustrated by volume requirements, comp plan changes that moved the goalposts, or a company that felt like it cared more about its own bottom line than its distributors.</p>
+
+    <p>And the person who simply wants to work with someone who has seen enough to know what is real — and who will walk alongside them until they get there.</p>
+
+    <h2>What This Is Not</h2>
+
+    <p>This is not an invitation to attend a webinar, watch a video, or sit through a presentation. If you reach out, we will have a conversation — a real one, between two people who both know what questions matter.</p>
+
+    <p>If what I am describing does not sound like the right fit for you right now, I respect that completely. The door is always open. Nothing I offer comes with pressure, deadlines, or follow-up calls you did not ask for.</p>
+
+    <div class="contact-box">
+      <h3>Start a Conversation</h3>
+      <p>No pitch. No pressure. Just a genuine conversation about whether what I am building is worth a closer look for you.</p>
+
+      <div class="contact-form">
+
+        <!-- First Name / Last Name -->
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label>First Name</label>
+            <input type="text" id="contact-firstname" placeholder="First name">
+            <span class="field-error" id="err-contact-firstname"></span>
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label>Last Name</label>
+            <input type="text" id="contact-lastname" placeholder="Last name">
+            <span class="field-error" id="err-contact-lastname"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="contact-email" placeholder="your@email.com">
+          <span class="field-error" id="err-contact-email"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="contact-phone" placeholder="e.g. 555-867-5309">
+          <span class="field-error" id="err-contact-phone"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Type</label>
+          <select id="contact-phonetype" class="form-select">
+            <option value="">— Select Phone Type —</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Home">Home</option>
+            <option value="Work">Work</option>
+          </select>
+          <span class="field-error" id="err-contact-phonetype"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Your State</label>
+          <select id="contact-state" class="form-select">
+            <option value="">— Select State —</option>
+            <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option><option>Outside USA</option>
+          </select>
+          <span class="field-error" id="err-contact-state"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Your Time Zone</label>
+          <select id="contact-tz" class="form-select">
+            <option value="">— Select Time Zone —</option>
+            <option value="ET">Eastern Time (ET)</option>
+            <option value="CT">Central Time (CT)</option>
+            <option value="MT">Mountain Time (MT)</option>
+            <option value="PT">Pacific Time (PT)</option>
+            <option value="AKT">Alaska Time (AKT)</option>
+            <option value="HT">Hawaii Time (HT)</option>
+            <option value="Other">Outside USA</option>
+          </select>
+          <span class="field-error" id="err-contact-tz"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Country</label>
+          <select id="contact-country" class="form-select">
+            <option value="">— Select Country —</option>
+            <option value="US">United States</option>
+            <option value="CA">Canada</option>
+            <option value="GB">United Kingdom</option>
+            <option value="AU">Australia</option>
+            <option value="NZ">New Zealand</option>
+            <option value="IE">Ireland</option>
+            <option value="MX">Mexico</option>
+            <option value="PH">Philippines</option>
+            <option value="IN">India</option>
+            <option value="NG">Nigeria</option>
+            <option value="ZA">South Africa</option>
+            <option value="KE">Kenya</option>
+            <option value="GH">Ghana</option>
+            <option value="SG">Singapore</option>
+            <option value="MY">Malaysia</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="field-error" id="err-contact-country"></span>
+        </div>
+
+        <div class="form-group">
+          <label>What brings you here?</label>
+          <textarea id="contact-message" placeholder="Are you interested in the products, the business, or both? Tell me a little about where you are and what you are looking for."></textarea>
+        </div>
+
+        <button class="btn" style="width:100%" onclick="validateContact()">Send My Message →</button>
+        <div id="contact-result" style="display:none;margin-top:20px;background:rgba(255,255,255,.07);border:2px solid var(--teal);padding:20px;text-align:center;">
+          <p style="color:var(--white);font-size:1rem;margin:0;">✓ Message sent! I personally read every message and will be in touch within 24 hours.</p>
+        </div>
+        <p class="form-note">I personally read and respond to every message. Usually within 24 hours.</p>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /opportunity -->
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Success Hiway</div>
+  <p>Built on 50 years of network marketing experience. &nbsp;|&nbsp;
+    <a href="#" onclick="showPage('home')">Home</a> &nbsp;·&nbsp;
+    <a href="#" onclick="showPage('ebook')">The eBook</a> &nbsp;·&nbsp;
+    <a href="#" onclick="showPage('about')">About</a> &nbsp;·&nbsp;
+    <a href="#" onclick="showPage('opportunity')">Work With Me</a>
+  </p>
+  <p style="margin-top:8px">© Success Hiway · successhiway.com · All rights reserved</p>
+  <p style="margin-top:8px;font-size:.78rem">This site is independent of any specific network marketing company. The Art of Recruiting is a universal guide applicable to any direct sales organization.</p>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════
+// GOOGLE SHEETS WEB APP URL
+// Replace this with your deployed Apps Script URL
+// ═══════════════════════════════════════════════
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwiZ2NtxSMlvIZDOn7m9-1IRSgPYFEQlNDZvzDBTTasoXpH7fr5FP59Qrclwuqavbf_/exec';
+
+// ═══════════════════════════════════════════════
+// PAGE NAVIGATION
+// ═══════════════════════════════════════════════
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.getElementById('nav-' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ═══════════════════════════════════════════════
+// VALIDATION HELPERS
+// ═══════════════════════════════════════════════
+const NUMVERIFY_KEY = '5e8bc50a57e487205a14b5a3b3f14404';
+
+function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); }
+
+function setError(id, msg) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = msg;
+}
+function clearErrors(ids) { ids.forEach(id => setError(id, '')); }
+
+function normalizePhone(v) {
+  return v.trim().replace(/[\s\-\(\)\.]/g, '');
+}
+
+async function verifyPhoneNumverify(phone) {
+  const cleaned = normalizePhone(phone);
+  if (!/^\+?[\d]{7,15}$/.test(cleaned)) return false;
+  try {
+    const url = `https://apilayer.net/api/validate?access_key=${NUMVERIFY_KEY}&number=${encodeURIComponent(cleaned)}&format=1`;
+    const res  = await fetch(url);
+    const data = await res.json();
+    return data.valid === true;
+  } catch (e) {
+    console.warn('Numverify API unreachable, falling back to format check.', e);
+    return /^\+?[\d]{7,15}$/.test(cleaned);
+  }
+}
+
+function setButtonLoading(btn, loading, origText) {
+  btn.disabled = loading;
+  btn.textContent = loading ? 'Verifying phone…' : origText;
+}
+
+async function postToSheets(payload) {
+  try {
+    await fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  } catch(e) {
+    console.warn('Could not save to Google Sheets:', e);
+  }
+}
+
+// ═══════════════════════════════════════════════
+// DISCOUNT OPT-IN FORM (SAVE10 / $27)
+// Fields: Date | FirstName | LastName | Email | Phone | State | TimeZone | PhoneType | Country
+// ═══════════════════════════════════════════════
+async function validate17() {
+  clearErrors(['err-f17-firstname','err-f17-lastname','err-f17-email','err-f17-phone','err-f17-phonetype','err-f17-state','err-f17-tz','err-f17-country']);
+
+  const firstName = document.getElementById('f17-firstname').value.trim();
+  const lastName  = document.getElementById('f17-lastname').value.trim();
+  const email     = document.getElementById('f17-email').value.trim();
+  const phone     = document.getElementById('f17-phone').value.trim();
+  const phoneType = document.getElementById('f17-phonetype').value;
+  const state     = document.getElementById('f17-state').value;
+  const tz        = document.getElementById('f17-tz').value;
+  const country   = document.getElementById('f17-country').value;
+
+  let ok = true;
+  if (!firstName)          { setError('err-f17-firstname', 'Please enter your first name.');       ok = false; }
+  if (!lastName)           { setError('err-f17-lastname',  'Please enter your last name.');        ok = false; }
+  if (!validEmail(email))  { setError('err-f17-email',     'Please enter a valid email address.'); ok = false; }
+  if (!phone)              { setError('err-f17-phone',     'Please enter your phone number.');     ok = false; }
+  if (!phoneType)          { setError('err-f17-phonetype', 'Please select a phone type.');         ok = false; }
+  if (!state)              { setError('err-f17-state',     'Please select your state.');           ok = false; }
+  if (!tz)                 { setError('err-f17-tz',        'Please select your time zone.');       ok = false; }
+  if (!country)            { setError('err-f17-country',   'Please select your country.');         ok = false; }
+  if (!ok) return;
+
+  const btn = document.querySelector('#form-discount button[onclick="validate17()"]');
+  const origText = btn.textContent;
+  setButtonLoading(btn, true, origText);
+
+  const phoneOk = await verifyPhoneNumverify(phone);
+  if (!phoneOk) {
+    setButtonLoading(btn, false, origText);
+    setError('err-f17-phone', 'That phone number could not be verified. Please check and try again.');
+    return;
+  }
+
+  await postToSheets({ firstName, lastName, email, phone, phoneType, state, timezone: tz, country });
+
+  setButtonLoading(btn, false, origText);
+  document.getElementById('code-17-result').style.display = 'block';
+  btn.style.display = 'none';
+}
+
+// ═══════════════════════════════════════════════
+// WORK WITH ME CONTACT FORM
+// Fields: Date | FirstName | LastName | Email | Phone | State | TimeZone | PhoneType | Country | Message
+// ═══════════════════════════════════════════════
+async function validateContact() {
+  clearErrors(['err-contact-firstname','err-contact-lastname','err-contact-email','err-contact-phone','err-contact-phonetype','err-contact-state','err-contact-tz','err-contact-country']);
+
+  const firstName = document.getElementById('contact-firstname').value.trim();
+  const lastName  = document.getElementById('contact-lastname').value.trim();
+  const email     = document.getElementById('contact-email').value.trim();
+  const phone     = document.getElementById('contact-phone').value.trim();
+  const phoneType = document.getElementById('contact-phonetype').value;
+  const state     = document.getElementById('contact-state').value;
+  const tz        = document.getElementById('contact-tz').value;
+  const country   = document.getElementById('contact-country').value;
+  const message   = document.getElementById('contact-message').value.trim();
+
+  let ok = true;
+  if (!firstName)          { setError('err-contact-firstname', 'Please enter your first name.');       ok = false; }
+  if (!lastName)           { setError('err-contact-lastname',  'Please enter your last name.');        ok = false; }
+  if (!validEmail(email))  { setError('err-contact-email',     'Please enter a valid email address.'); ok = false; }
+  if (!phone)              { setError('err-contact-phone',     'Please enter your phone number.');     ok = false; }
+  if (!phoneType)          { setError('err-contact-phonetype', 'Please select a phone type.');         ok = false; }
+  if (!state)              { setError('err-contact-state',     'Please select your state.');           ok = false; }
+  if (!tz)                 { setError('err-contact-tz',        'Please select your time zone.');       ok = false; }
+  if (!country)            { setError('err-contact-country',   'Please select your country.');         ok = false; }
+  if (!ok) return;
+
+  const btn = document.querySelector('.contact-form .btn');
+  const origText = btn.textContent;
+  setButtonLoading(btn, true, origText);
+
+  const phoneOk = await verifyPhoneNumverify(phone);
+  if (!phoneOk) {
+    setButtonLoading(btn, false, origText);
+    setError('err-contact-phone', 'That phone number could not be verified. Please check and try again.');
+    return;
+  }
+
+  await postToSheets({ firstName, lastName, email, phone, phoneType, state, timezone: tz, country, message, formSource: 'WorkWithMe' });
+
+  setButtonLoading(btn, false, origText);
+  btn.style.display = 'none';
+  document.getElementById('contact-result').style.display = 'block';
+}
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"5070e21320304a1ba2b0a42ce9682840","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
