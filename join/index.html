@@ -207,6 +207,35 @@ html{scroll-behavior:smooth}
 <a href="tel:+17156823655" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; background: #FFFFFF; color: #16241F; border-radius: 12px; font-weight: 700; font-size: 18px; text-decoration: none">Call Carl: (715) 682-3655</a>
 <a href="mailto:support@successhiway.com?subject=Question%20from%20your%20Join%20page&amp;body=My%20name%3A%20%0D%0ABest%20phone%20number%3A%20%0D%0ABest%20time%20to%20call%3A%20%0D%0AMy%20question%3A%20%0D%0A" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; background: transparent; color: #FFFFFF; border: 2px solid #FFFFFF; border-radius: 12px; font-weight: 700; font-size: 18px; text-decoration: none">Email support@successhiway.com</a>
 </div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-size: 16px; color: #EAF5EF">
+<span>Email button didn&#39;t open anything? Write to <strong id="sh-email" style="color: #FFFFFF; user-select: all">support@successhiway.com</strong></span>
+<button type="button" id="sh-copy" style="min-height: 44px; padding: 0 18px; background: #FFFFFF; color: #16241F; border: 0; border-radius: 10px; font-weight: 700; font-size: 16px; cursor: pointer">Copy email address</button>
+<a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=support@successhiway.com&amp;su=Question%20from%20your%20Join%20page&amp;body=My%20name%3A%20%0ABest%20phone%20number%3A%20%0ABest%20time%20to%20call%3A%20%0AMy%20question%3A%20%0A" target="_blank" rel="noopener" style="color: #FFFFFF; font-weight: 700">or open it in Gmail</a>
+<span id="sh-copied" role="status" aria-live="polite" style="font-weight: 700; color: #FFFFFF"></span>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById('sh-copy');
+  var msg = document.getElementById('sh-copied');
+  var addr = 'support@successhiway.com';
+  function done(ok) {
+    msg.textContent = ok ? 'Copied! Paste it into your email.' : 'Press Ctrl+C (or Cmd+C) to copy the highlighted address.';
+  }
+  function fallback() {
+    var el = document.getElementById('sh-email');
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    done(ok);
+  }
+  btn.addEventListener('click', function () {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(addr).then(function () { done(true); }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
 <p style="margin: 0; font-size: 16px; color: #EAF5EF">Outside the US: +1 715-682-3655. Already know you're ready? <a href="https://greatlifeworldwide.com/ref/carlerickson/9" style="color: #FFFFFF; font-weight: 700">Join my team on my GreatLife site</a>.</p>
 <p style="margin: 0; font-size: 15px; color: #EAF5EF">On a phone and GreatLife&#39;s page doesn&#39;t fully show? Tap your back arrow and tap the link again.</p>
 </div>
