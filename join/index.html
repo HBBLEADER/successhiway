@@ -205,8 +205,74 @@ html{scroll-behavior:smooth}
 <p style="margin: 0; font-size: 20px; color: #EAF5EF; max-width: 680px">Call me with your hardest questions. I'll answer them straight, and if this isn't a fit for you, I'll say so. There's no obligation, ever.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px">
 <a href="tel:+17156823655" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; background: #FFFFFF; color: #16241F; border-radius: 12px; font-weight: 700; font-size: 18px; text-decoration: none">Call Carl: (715) 682-3655</a>
-<a href="mailto:support@successhiway.com?subject=Question%20from%20your%20Join%20page&amp;body=My%20name%3A%20%0D%0ABest%20phone%20number%3A%20%0D%0ABest%20time%20to%20call%3A%20%0D%0AMy%20question%3A%20%0D%0A" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; background: transparent; color: #FFFFFF; border: 2px solid #FFFFFF; border-radius: 12px; font-weight: 700; font-size: 18px; text-decoration: none">Email support@successhiway.com</a>
+<button type="button" id="sh-open" aria-expanded="false" aria-controls="sh-form" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; background: transparent; color: #FFFFFF; border: 2px solid #FFFFFF; border-radius: 12px; font-weight: 700; font-size: 18px; font-family: inherit; cursor: pointer">Send Carl a message</button>
 </div>
+<style>
+#sh-form label{display:block;font-size:16px;font-weight:700;color:#FFFFFF;margin-bottom:6px}
+#sh-form input,#sh-form textarea{box-sizing:border-box;width:100%;min-height:52px;padding:12px 14px;border:2px solid transparent;border-radius:10px;font:inherit;font-size:18px;color:#16241F;background:#FFFFFF}
+#sh-form textarea{min-height:120px;resize:vertical}
+#sh-form input:focus,#sh-form textarea:focus{outline:none;border-color:#F2C14E}
+#sh-form .sh-opt{font-weight:400;color:#CFE6DA}
+#sh-form .sh-err{display:block;min-height:1em;font-size:15px;color:#FFD9A0;margin-top:4px}
+#sh-form .sh-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){#sh-form .sh-row{grid-template-columns:1fr}}
+</style>
+<div id="sh-form" hidden style="box-sizing: border-box; width: 100%; max-width: 680px; background: rgba(0,0,0,0.14); border-radius: 16px; padding: 24px">
+<form id="sh-msg" novalidate style="display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 17px; color: #EAF5EF">Fill this in and tap Send. It comes straight to me, and I&#39;ll call you back.</p>
+<div class="sh-row">
+<div><label for="sh-name">Your first name</label><input id="sh-name" name="firstName" autocomplete="given-name"><span class="sh-err" id="sh-name-err"></span></div>
+<div><label for="sh-phone">Best phone number</label><input id="sh-phone" name="phone" type="tel" autocomplete="tel"><span class="sh-err" id="sh-phone-err"></span></div>
+</div>
+<div class="sh-row">
+<div><label for="sh-time">Best time to call <span class="sh-opt">(optional)</span></label><input id="sh-time" name="bestTime" placeholder="e.g. weekday evenings"></div>
+<div><label for="sh-mail">Email <span class="sh-opt">(optional)</span></label><input id="sh-mail" name="email" type="email" autocomplete="email"><span class="sh-err" id="sh-mail-err"></span></div>
+</div>
+<div><label for="sh-q">Your question <span class="sh-opt">(optional)</span></label><textarea id="sh-q" name="message"></textarea></div>
+<div style="position: absolute; left: -9999px" aria-hidden="true"><label for="sh-web">Leave blank</label><input id="sh-web" name="website" tabindex="-1" autocomplete="off"></div>
+<div><button type="submit" id="sh-send" style="min-height: 56px; padding: 0 32px; background: #FFFFFF; color: #16241F; border: 0; border-radius: 12px; font-weight: 700; font-size: 18px; font-family: inherit; cursor: pointer">Send</button></div>
+</form>
+<div id="sh-thanks" hidden role="status" style="font-size: 20px; color: #FFFFFF">
+<p style="margin: 0 0 8px; font-weight: 800; font-size: 24px">Thanks, <span id="sh-thanks-name">friend</span>!</p>
+<p style="margin: 0; color: #EAF5EF">Your message is on its way to me. I&#39;ll call you soon. If you&#39;d rather not wait, call me any time at (715) 682-3655.</p>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; color: #CFE6DA">Prefer email? Write to support@successhiway.com</p>
+<script>
+(function () {
+  var URL = 'https://script.google.com/macros/s/AKfycbwHTOK_XJ_n2aZDw3TnjAud9m3X2REFRBb4-cZHItaGFQX6Ep_0WLl6olL3VCUL0BA9PA/exec';
+  var open = document.getElementById('sh-open'), box = document.getElementById('sh-form');
+  var form = document.getElementById('sh-msg'), send = document.getElementById('sh-send');
+  open.addEventListener('click', function () {
+    box.hidden = !box.hidden;
+    open.setAttribute('aria-expanded', String(!box.hidden));
+    if (!box.hidden) { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); setTimeout(function () { document.getElementById('sh-name').focus({ preventScroll: true }); }, 400); }
+  });
+  function v(id) { return document.getElementById(id).value.trim(); }
+  function err(id, m) { document.getElementById(id).textContent = m; }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (v('sh-web')) return;
+    var name = v('sh-name'), phone = v('sh-phone'), mail = v('sh-mail'), ok = true;
+    err('sh-name-err', ''); err('sh-phone-err', ''); err('sh-mail-err', '');
+    if (!name) { err('sh-name-err', 'Please enter your first name.'); ok = false; }
+    if (!/^\+?\d{7,15}$/.test(phone.replace(/[\s\-().]/g, ''))) { err('sh-phone-err', 'Please enter a phone number I can call.'); ok = false; }
+    if (mail && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) { err('sh-mail-err', 'That email doesn’t look right.'); ok = false; }
+    if (!ok) return;
+    send.disabled = true; send.textContent = 'Sending…';
+    var payload = { formSource: 'Join', firstName: name, phone: phone, bestTime: v('sh-time'), email: mail, message: v('sh-q'), page: location.href };
+    var finish = function () {
+      document.getElementById('sh-thanks-name').textContent = name;
+      form.style.display = 'none'; document.getElementById('sh-thanks').hidden = false;
+    };
+    fetch(URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
+      .then(finish, function () {
+        send.disabled = false; send.textContent = 'Send';
+        err('sh-name-err', 'Something blocked the message. Please try again, or call me at (715) 682-3655.');
+      });
+  });
+})();
+</script>
 <p style="margin: 0; font-size: 16px; color: #EAF5EF">Outside the US: +1 715-682-3655. Already know you're ready? <a href="https://greatlifeworldwide.com/ref/carlerickson/9" style="color: #FFFFFF; font-weight: 700">Join my team on my GreatLife site</a>.</p>
 <p style="margin: 0; font-size: 15px; color: #EAF5EF">On a phone and GreatLife&#39;s page doesn&#39;t fully show? Tap your back arrow and tap the link again.</p>
 </div>
